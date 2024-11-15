@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->id();
-             $table->string('estado');
-             $table->timestamps();
+            $table->string('estado');
+            $table->foreignId('grupo_id')->constrained('grupos')->onDelete('cascade');
+            $table->foreignId('curso_id')->constrained('cursos')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('periodo_academico_id')->constrained('periodo_academicos')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

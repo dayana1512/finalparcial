@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('matriculas', function (Blueprint $table) {
             $table->id();
             $table->string('estado');
-            $table->foreignId('registro_id')->constrained('registros')->onDelete('cascade');
+            $table->foreignId('registro_id')->constrained('usuarios')->onDelete('cascade');
             $table->timestamps();
         });
     }
