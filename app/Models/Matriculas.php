@@ -25,7 +25,7 @@ public function grupo()
 // Relación con Usuario
 public function usuario()
 {
-    return $this->belongsTo(Usuario::class);
+    return $this->belongsTo(Usuarios::class,'registro_id' );
 }
 }
 

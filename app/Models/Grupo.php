@@ -14,19 +14,19 @@ class Grupo extends Model
 // Relación con Usuario (Docente)
 public function docente()
 {
-    return $this->belongsTo(Usuario::class, 'docente_id');
+    return $this->belongsTo(Usuarios::class, 'docente_id');
 }
 
 // Relación con Curso
 public function curso()
 {
-    return $this->belongsTo(Curso::class);
+    return $this->belongsTo(Cursos::class, 'curso_id');
 }
 
 // Relación con Periodo Académico
 public function periodoAcademico()
 {
-    return $this->belongsTo(PeriodoAcademico::class);
+    return $this->belongsTo(Periodo_academico::class, 'periodo_academico_id');
 }
 
 // Relación con Matrículas

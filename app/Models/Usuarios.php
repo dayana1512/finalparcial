@@ -10,9 +10,9 @@ class Usuarios extends Model
     protected $fillable = ['nombre', 'tipo_rol', 'matriculas_id'];
 
     // Relación con Role
-    public function role()
+    public function rol()
     {
-        return $this->belongsTo(Role::class, 'tipo_rol');
+        return $this->belongsTo(Roles::class, 'tipo_rol'); // tipo_rol es el campo que actúa como clave foránea
     }
 
     // Relación con Matrícula
@@ -25,5 +25,6 @@ class Usuarios extends Model
     public function grupos()
     {
         return $this->hasMany(Grupo::class, 'docente_id');
-    }
+    }   
+    
 }
